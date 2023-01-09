@@ -1,0 +1,33 @@
+#custom-cursor {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  mix-blend-mode: difference;
+  transition: width 0.25s cubic-bezier(0.5, -1, 0.5, 2);
+  pointer-events: none !important;
+}
+#custom-cursor.cursor-targeting {
+  width: 80px;
+  border-color: greenyellow;
+}
+#custom-cursor.cursor-targeting #custom-cursor-inner-circle {
+  background-color: greenyellow;
+}
+#custom-cursor #custom-cursor-inner-circle {
+  content: "";
+  width: 8px;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  opacity: 0.8;
+  mix-blend-mode: difference;
+  transition: background-color 0.25s erase-in-out;
+}

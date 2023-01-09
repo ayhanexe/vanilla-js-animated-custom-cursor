@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      #example-targets {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+        display:flex;
+        flex-wrap:wrap;
+        gap:50px;
+        text-align:center;
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        cursor: none;
+      }
+
+      body {
+        background-color: black;
+        color:whitesmoke;
+        font-family:Tahoma;
+      }
+      
+      a {
+        color:inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="custom-cursor" class="cursor-targeting">
+      <div id="custom-cursor-inner-circle"></div>
+    </div>
+
+    <div id="example-targets">
+      <a href="#">Example Link</a>
+      <a href="#">Example Link</a>
+      <a href="#">Example Link</a>
+      <a href="#">Example Link</a>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

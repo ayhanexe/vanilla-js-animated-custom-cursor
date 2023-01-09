@@ -1,0 +1,49 @@
+$cursorOuterCircleBorderWidth: 2px;
+$cursorOuterCircleRadius: 40px;
+$cursorInsetCircleRadius: 8px;
+$baseTransitionDuration: 0.25s;
+$cursorTargetingColor: greenyellow;
+$cursorTargetingTimingFunction: cubic-bezier(.5,-1,.5,2);
+
+#custom-cursor {
+  width: $cursorOuterCircleRadius;
+  aspect-ratio: 1/1;
+  border: $cursorOuterCircleBorderWidth solid white;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  mix-blend-mode: difference;
+  transition: width $baseTransitionDuration $cursorTargetingTimingFunction;
+  pointer-events: none !important;
+
+  &.cursor-targeting {
+    $cursorOuterCircleRadius: 80px;
+    width: $cursorOuterCircleRadius;
+    border-color: $cursorTargetingColor;
+    #custom-cursor-inner-circle {
+      background-color: $cursorTargetingColor;
+    }
+  }
+
+  #custom-cursor-inner-circle {
+    content: "";
+    width: $cursorInsetCircleRadius;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+    top: calc(
+      ($cursorOuterCircleRadius / 2) - ($cursorInsetCircleRadius / 2) -
+        $cursorOuterCircleBorderWidth
+    );
+    left: calc(
+      ($cursorOuterCircleRadius / 2) - ($cursorInsetCircleRadius / 2) -
+        $cursorOuterCircleBorderWidth
+    );
+    opacity: 0.8;
+    mix-blend-mode: difference;
+    transition: background-color $baseTransitionDuration erase-in-out;
+  }
+}
